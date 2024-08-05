@@ -1,0 +1,275 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: #000;
+    overflow-x: hidden;
+}
+
+.nav-bar{
+    height: 10vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    position: fixed;
+    z-index: 9;
+}
+
+.scroll-indecateur{
+    position: absolute;
+    bottom: 0;
+    width: 0%;
+    height: 3px;
+    background-color: #ffee00;
+}
+
+.nav-bar .logo{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: end;
+    position: absolute;
+    left: 5em;
+}
+
+.nav-bar .logo img{
+    width: 10vw;
+    height: auto;
+    cursor: pointer;
+}
+
+.dropdown-button{
+    display: none;
+    color: #ffee00;
+}
+
+.nav-bar .links{
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar .links ul{
+    display: flex;
+    position: absolute;
+    right: 3em;
+    list-style: none;
+}
+
+.nav-bar .links ul li{
+    margin-right: 2em;
+    cursor: pointer;
+    position: relative;
+    transition: color 1s ease;
+}
+
+.nav-bar .links ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.nav-bar .links ul li a:hover{
+    color: #ffee00;
+}
+
+.nav-bar .links ul li:hover::before{
+    content: "";
+    position: absolute;
+    top: 100%;
+    width: 5px;
+    height: 5px;
+    margin-right: 0.5em;
+    background-color: #fff;
+    animation: link-hover 0.3s linear 1 forwards;
+}
+
+.main{
+    width: 100vw;
+    height: 88vh;
+    background-color: #fff;
+    background-image: url(/rec/images.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.contact{
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.contact .title{
+    color: #ffee00;
+    font-size: 3em;
+
+}
+
+.contact .details {
+    margin: 5em 0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+.contact .details h2{
+    color: #ffee00;
+}
+
+.contact .details p{
+    color: #fff;
+}
+
+.container{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.photo{
+    position: relative;
+    top: 10%;
+    width: 20em;
+    height: 20em;
+    border-radius: 50%;
+    border: 10px solid #333;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.cards{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card{
+    width: 25em;
+    min-height: 10em;
+    background: white;
+    box-shadow: 0 -0.5rem 1rem rgba(0 0 0 / 0.15);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 1em;
+}
+
+.card:nth-child(1){
+    margin-right: 1em;
+}
+
+.card:hover{
+    transition: 0.5s linear;
+    transform: scale(1.1);
+}
+
+.card strong{
+    margin: 2em 0;
+}
+
+#phone-logo{
+    font-size: 5em;
+    margin-top: 0.5em;
+}
+
+footer{
+    width: 100vw;
+    min-height: 3em;
+    height: 10vh;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+footer p{
+    color: #ffee00;
+}
+
+footer .social-media a{
+    color: #fff;
+    font-size: 1.7em;
+    margin: 0 0.5em;
+}
+
+footer .social-media a:hover{
+    color: #ffee00;
+}
+
+@keyframes link-hover{
+    0%{
+        padding-right: 0%;
+        background-color: #fff;
+    }
+    75%{
+        background-color: #ffee00;
+    }
+    100%{
+        padding-right: 100%;
+        background-color: #ffee00;
+    }
+}
+
+@media (max-width: 700px){
+
+    .nav-bar{
+        height: 8vh;
+    }
+
+    .dropdown-button{
+        display: block;
+        position: absolute;
+        right: 1em;
+        font-size: 2em;
+        cursor: pointer;
+    }
+
+    .contact .title{
+        font-size: 2em;
+    }
+
+    .nav-bar .logo{
+        left: 0;
+    }
+
+    #sq-logo{
+        width: 35vw;
+    }
+
+    .nav-bar .links{
+        display: none;
+    }
+
+    .nav-bar .links.toggled{
+        display: flex;
+    }
+
+    .nav-bar .links ul{
+        background-color: #333;
+        width: 100vw;
+        top: 10vh;
+        left: 0;
+        flex-direction: column;
+        align-items: center;
+    }
+}
